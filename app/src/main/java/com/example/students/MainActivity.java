@@ -16,6 +16,5 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.activity_main_recycler_view);
         FloatingActionButton floatingActionButton = findViewById(R.id.activity_main__fb_add);
-//        floatingActionButton.setColorFilter(Color.argb(255, 255, 255, 255));
     }
 }
