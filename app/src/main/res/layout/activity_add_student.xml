@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/student_item_guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/student_item_guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/student_item_guideline_center_views"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/student_item_guideline_vertical_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <TextView
+        android:id="@+id/student_item_student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/student"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/student_item_guideline_top" />
+
+    <EditText
+        android:id="@+id/student_item_student_first_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_your_first_name"
+        android:textColorHint="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/student_item_student_last_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/student_item_guideline_vertical_center"
+        app:layout_constraintTop_toBottomOf="@+id/student_item_student" />
+
+    <EditText
+        android:id="@+id/student_item_student_last_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_your_last_name"
+        android:maxLines="1"
+        android:textColorHint="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/student_item_isMale"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/student_item_guideline_vertical_center"
+        app:layout_constraintTop_toBottomOf="@+id/student_item_student_first_name" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/activity_main_student_photo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="#9e9e9e"
+        app:layout_constraintBottom_toBottomOf="@+id/student_item_student_last_name"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/student_item_isMale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/male"
+        app:layout_constraintBottom_toTopOf="@+id/student_item_guideline_center_views"
+        app:layout_constraintStart_toStartOf="@+id/student_item_student_last_name" />
+
+    <Button
+        android:id="@+id/student_item_delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:text="@string/delete"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/student_item_guideline_bottom"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/student_item_save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="@string/save"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/student_item_guideline_bottom"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
