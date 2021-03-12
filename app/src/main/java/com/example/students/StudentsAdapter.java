@@ -1,5 +1,6 @@
 package com.example.students;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -11,20 +12,26 @@ import java.util.List;
 public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.StudentViewHolder> {
 
     private final List<Student> students;
+    private final Listener onStudentClickListener;
 
-    public StudentsAdapter(List<Student> students) {
+    public StudentsAdapter(List<Student> students, Listener onStudentClickListener) {
         this.students = students;
+        this.onStudentClickListener = onStudentClickListener;
     }
 
     @NonNull
     @Override
     public StudentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.student_item, parent, false);
+        view.setOnClickListener(v -> {
+            onStudentClickListener.onStudentClick((Student) v.getTag());
+        });
+        return new StudentViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull StudentViewHolder holder, int position) {
-
+        Student student = students.get(position);
     }
 
     @Override
@@ -37,5 +44,9 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.Studen
         public StudentViewHolder(@NonNull View itemView) {
             super(itemView);
         }
+    }
+
+    interface Listener {
+        void onStudentClick(Student student);
     }
 }
